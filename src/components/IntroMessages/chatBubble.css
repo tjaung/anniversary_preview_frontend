@@ -1,0 +1,73 @@
+.intro-bubble {
+  border-radius: 1em;
+  padding: 0.25em 0.75em;
+  margin: 0.0625em;
+  max-width: 100%; /* Allow bubbles to stretch to 100% */
+
+  display: inline-block;
+  align-self: stretch;
+  animation: grow 0.25s;
+}
+
+.intro-bubble.sender {
+  align-self: flex-start;
+  background-color: #efefef;
+  color: #252525;
+}
+.intro-bubble.recipient {
+  align-self: flex-end;
+  background-color: cornflowerblue;
+  color: #fff;
+}
+
+.intro-bubble.sender.first {
+  border-bottom-left-radius: 0.1em;
+}
+.intro-bubble.sender.last {
+  border-top-left-radius: 0.1em;
+}
+.intro-bubble.sender.middle {
+  border-bottom-left-radius: 0.1em;
+  border-top-left-radius: 0.1em;
+}
+
+.intro-bubble.recipient.first {
+  border-bottom-right-radius: 0.1em;
+}
+.intro-bubble.recipient.last {
+  border-top-right-radius: 0.1em;
+}
+.intro-bubble.recipient.middle {
+  border-bottom-right-radius: 0.1em;
+  border-top-right-radius: 0.1em;
+}
+
+.show {
+  display: inline-block;
+}
+.hide {
+  display: none;
+}
+
+@keyframes grow {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.growOut {
+  animation: grow 0.25s forwards;
+}
+
+/* MEDIA QUERIES */
+
+/* TABLETS */
+@media screen and (max-width: 1024px) {
+  .intro-bubble {
+    font-size: 12px;
+    line-height: 1;
+  }
+}

@@ -1,0 +1,33 @@
+/* Container for all messages */
+.messages {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 3rem;
+  margin-bottom: 10rem;
+  overflow-x: hidden;
+}
+
+.message-group {
+  padding-bottom: 5px;
+}
+
+.timestamp-log {
+  text-align: center;
+  width: 100%; /* Ensures it takes up the full width of the parent container */
+  margin: 10px 0; /* Adjust spacing as needed */
+  font-size: 0.85em; /* Optional: Adjust font size */
+  color: gray; /* Optional: Adjust text color */
+}
+
+.conversation-section {
+  margin-bottom: 5rem;
+}
+
+.section-heading {
+  flex: 0 0 33%;
+  padding: 10px 15px;
+  position: sticky;
+  /* text-align: right; */
+  top: 0;
+}

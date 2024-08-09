@@ -1,0 +1,36 @@
+.message__outer {
+  display: flex;
+}
+.message__holder {
+  width:100%;
+}
+.receive {
+  flex-direction: row-reverse;
+}
+
+.message__inner {
+  flex: 1;
+  display: flex;
+  flex-direction: row-reverse;
+}
+.message__bubble {
+  max-width: calc(100% - 67px);
+  overflow-wrap: break-word;
+}
+
+.message__actions {
+  flex-shrink: 0;
+}
+
+.message__status {
+  width: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.message__avatar {
+  padding-left: 6px;
+  padding-right: 8px;
+}

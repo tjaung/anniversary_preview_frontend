@@ -1,0 +1,129 @@
+.timeline {
+  background: rgba(0, 0, 0, 0.3);
+  width: max-content;
+  /* display: block; */
+  padding: 0.7rem 1.7rem;
+  z-index: 2;
+  position: fixed;
+  transform: rotate(90deg);
+  /* left: 2rem; */
+  /* align-self: left; */
+  display: flex;
+  gap: 0.8rem;
+  border-radius: 3rem;
+  backdrop-filter: blur(15px);
+
+  right: -100px;
+  bottom: 50vh;
+
+  -webkit-overflow-scrolling: touch;
+}
+
+.timeline a {
+  background: transparent;
+  padding: 1rem;
+  border-radius: 50%;
+  display: flex;
+  color: var(--color-light);
+  font-size: 1.1rem;
+  transform: rotate(270deg);
+}
+
+.timeline a:hover,
+a:active {
+  background: rgba(0, 0, 0, 0.3);
+}
+.timeline a::after {
+  content: attr(
+    data-tooltip
+  ); /* Use the data-tooltip attribute to set the tooltip text */
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  white-space: nowrap;
+  z-index: 10;
+  background-color: black;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.timeline a:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+.timeline a.active {
+  background: var(--color-bg-variant);
+  color: var(--color-white);
+  size: 200px;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  z-index: 10;
+  background-color: black;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  /* width: 100%; */
+}
+
+@media (hover: hover) and (pointer: fine) {
+  nav a:hover,
+  a:active {
+    background: rgba(0, 0, 0, 0.3);
+  }
+  .timeline a::after {
+    content: attr(
+      data-tooltip
+    ); /* Use the data-tooltip attribute to set the tooltip text */
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    white-space: nowrap;
+    z-index: 10;
+    background-color: black;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+  }
+
+  .timeline a:hover::after {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .timeline {
+    display: block;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-90deg);
+    padding: 0rem;
+  }
+
+  .timeline a {
+    transform: rotate(-270deg);
+  }
+}

@@ -1,0 +1,170 @@
+.bubble-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  align-items: flex-start; /* Default to flex-start for sender bubbles */
+}
+
+.bubble-container.recipient {
+  align-items: flex-end; /* Align recipient bubbles to the end */
+}
+
+.bubble {
+  border-radius: 1em;
+  padding: 0.25em 0.75em;
+  margin: 0.0625em;
+  max-width: 100%; /* Allow bubbles to stretch to 100% */
+  display: inline-block;
+  align-self: stretch;
+  animation: grow 0.25s;
+  position: relative;
+}
+
+.bubble.sender {
+  align-self: flex-start;
+  background-color: #efefef;
+  color: #252525;
+}
+
+.bubble.recipient {
+  align-self: flex-end;
+  background-color: cornflowerblue;
+  color: #fff;
+}
+
+.bubble.sender.first {
+  border-bottom-left-radius: 0.1em;
+}
+.bubble.sender.last {
+  border-top-left-radius: 0.1em;
+}
+.bubble.sender.middle {
+  border-bottom-left-radius: 0.1em;
+  border-top-left-radius: 0.1em;
+}
+
+.bubble.recipient.first {
+  border-bottom-right-radius: 0.1em;
+}
+.bubble.recipient.last {
+  border-top-right-radius: 0.1em;
+}
+.bubble.recipient.middle {
+  border-bottom-right-radius: 0.1em;
+  border-top-right-radius: 0.1em;
+}
+
+.bubble.recipient.messenger {
+  background: linear-gradient(rgb(255, 143, 178), rgb(167, 151, 255));
+}
+
+.bubble.sender.messenger {
+  background: linear-gradient(rgb(167, 151, 255), rgb(0, 229, 255));
+}
+
+/* .images img {
+  height: 150px;
+  width: 90px;
+} */
+
+img {
+  display: block;
+  max-width: 100%;
+  max-height: 200px;
+  width: 100%;
+  height: 100%;
+}
+
+video {
+  display: block;
+  max-width: 100%;
+  max-height: 200px;
+  width: 100%;
+  height: 100%;
+}
+
+/* .share */
+
+.share-text a {
+  font-weight: bold;
+  color: black;
+}
+
+.share-desc {
+  padding-top: 10px;
+  font-weight: bold;
+  color: black;
+  font-size: 0.6rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}
+
+.timestamp {
+  visibility: hidden;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 10px;
+  position: absolute;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s;
+  white-space: nowrap;
+  top: 50%; /* Align timestamp vertically with the bubble */
+  transform: translateY(-50%); /* Center the timestamp */
+}
+
+.timestamp.sender {
+  left: 100%;
+  margin-left: 10px;
+}
+
+.timestamp.recipient {
+  right: 100%;
+  margin-right: 10px;
+}
+
+.bubble:hover .timestamp {
+  visibility: visible;
+  opacity: 1;
+}
+
+.reaction {
+  background-color: white;
+  text-align: center;
+  border-radius: 50%;
+  /* padding: 5px 10px; */
+  position: absolute;
+  z-index: 1;
+  white-space: nowrap;
+  top: 110%; /* Align timestamp vertically with the bubble */
+  transform: translateY(-50%); /* Center the timestamp */
+  font-size: 10px;
+}
+
+.reaction.sender {
+  left: 0%;
+}
+
+.reaction.recipient {
+  right: 0%;
+}
+
+/* MEDIA QUERIES */
+
+/* TABLETS */
+@media screen and (max-width: 620px) {
+  .timestamp.sender {
+    left: 0%;
+    margin-left: 10px;
+  }
+
+  .timestamp.recipient {
+    right: 0%;
+    margin-right: 10px;
+  }
+}
